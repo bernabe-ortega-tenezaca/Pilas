@@ -1,18 +1,23 @@
 ﻿
-menu();
-string? opcion = Console.ReadLine();
-
-switch (opcion)
+while (true)
 {
-    case "0":
-        return;
-    case "1":
-        System.Console.WriteLine("Ha seleccionado la opcioón 1");
-        break;
-    default:
-        System.Console.WriteLine("Opción no válida, presione una tecla para continuar");
-        break;
-}
+    menu();
+    string? opcion = Console.ReadLine();
+
+    switch (opcion)
+    {
+        case "0":
+            return;
+        case "1":
+            encabezado("Teoría de pilas");
+            Pila.Run();
+            pie();
+            break;
+        default:
+            System.Console.WriteLine("Opción no válida, presione una tecla para continuar");
+            break;
+    }
+} 
 
 
 /**
@@ -21,7 +26,9 @@ switch (opcion)
 static void menu(){
     caratula();
     System.Console.WriteLine("1 Teoría de pilas");
+    System.Console.WriteLine(new string('-', 55));
     System.Console.WriteLine("0 Salir");
+    System.Console.WriteLine();
 }
 
 /**
@@ -38,4 +45,14 @@ static void caratula()
     System.Console.WriteLine("           Menú de opciones - Escriba un número");
     System.Console.WriteLine();
 
+}
+
+static void encabezado(string opcion){
+    System.Console.WriteLine("======================================");
+    System.Console.WriteLine(opcion);
+    System.Console.WriteLine("======================================");
+}
+
+static void pie(){
+    System.Console.WriteLine(new string('=', 20)); 
 }
