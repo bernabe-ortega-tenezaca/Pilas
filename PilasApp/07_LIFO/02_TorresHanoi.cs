@@ -16,7 +16,17 @@ public static class Hanoi{
     }
 
     static void Resolver(int n, Stack<int> origen, Stack<int> destino, Stack<int> auxiliar){
+        if (n == 1)
+        {
+            MoverDisco(origen, destino);
+        }
+        else{
+            Resolver(n-1, origen, auxiliar, destino);
+            MoverDisco(origen, destino);
+            DibujarTorres();
 
+            Resolver(n-1, auxiliar, destino, origen);
+        }
     }
 
     static void MoverDisco(Stack<int> origen, Stack<int> destino){
