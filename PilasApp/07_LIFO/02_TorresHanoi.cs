@@ -6,13 +6,14 @@ public static class Hanoi{
 
     
     public static void Run(){
-        System.Console.WriteLine("Cuántos discos contiene la torre");
+        System.Console.Write("Cuántos discos contiene la torre");
         int NumDiscos = int.Parse(Console.ReadLine());
 
         for (int i = NumDiscos; i >=1 ; i--){
             torreA.Push(i);
         }
         DibujarTorres();
+
         Resolver(NumDiscos, torreA, torreC, torreB);
     }
 
@@ -20,12 +21,13 @@ public static class Hanoi{
         if (n == 1)
         {
             MoverDisco(origen, destino);
+            DibujarTorres();
         }
         else{
             Resolver(n-1, origen, auxiliar, destino);
             MoverDisco(origen, destino);
+            
             DibujarTorres();
-
             Resolver(n-1, auxiliar, destino, origen);
         }
     }
