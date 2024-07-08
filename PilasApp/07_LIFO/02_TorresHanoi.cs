@@ -2,8 +2,22 @@ public static class Hanoi{
 
     static Stack<int> torreA = new Stack<int>();
     static Stack<int> torreB = new Stack<int>();
-    static Stack<int> torreB = new Stack<int>();
-    public static void Run(){
+    static Stack<int> torreC = new Stack<int>();
 
+    
+    public static void Run(){
+        System.Console.WriteLine("Cuántos discos contiene la torre");
+        int NumDiscos = int.Parse(Console.ReadLine());
+
+        for (int i = NumDiscos; i >=1 ; i--){
+            torreA.Push(i);
+        }
+    }
+
+    static void DibujarTorres(){
+        System.Console.WriteLine("Estado de las Torres:");
+        System.Console.WriteLine("Torre A: {0}", string.Join(", ", torreA));
+        System.Console.WriteLine("Torre B: {0}", string.Join(", ", torreB));
+        System.Console.WriteLine("Torre C: {0}", string.Join(", ", torreC));
     }
 }
