@@ -12,6 +12,15 @@ public static class Hanoi{
         for (int i = NumDiscos; i >=1 ; i--){
             torreA.Push(i);
         }
+        DibujarTorres();
+    }
+
+    static void Resolver(int n, Stack<int> origen, Stack<int> destino, Stack<int> auxiliar){
+
+    }
+
+    static void MoverDisco(Stack<int> origen, Stack<int> destino){
+        destino.Push(origen.Pop());
     }
 
     static void DibujarTorres(){
@@ -19,5 +28,6 @@ public static class Hanoi{
         System.Console.WriteLine("Torre A: {0}", string.Join(", ", torreA));
         System.Console.WriteLine("Torre B: {0}", string.Join(", ", torreB));
         System.Console.WriteLine("Torre C: {0}", string.Join(", ", torreC));
+        System.Console.WriteLine(new string('*',30));
     }
 }

@@ -13,6 +13,11 @@ while (true)
             Pila.Run();
             pie();
             break;
+        case "2":
+            encabezado("Pilas - Torre de Hanoi");
+            Hanoi.Run();
+            pie();
+            break;
         default:
             System.Console.WriteLine("Opción no válida, presione una tecla para continuar");
             break;
@@ -26,6 +31,7 @@ while (true)
 static void menu(){
     caratula();
     System.Console.WriteLine("1 Teoría de pilas");
+    System.Console.WriteLine("2     Pilas - Torre de Hanoi");
     System.Console.WriteLine(new string('-', 55));
     System.Console.WriteLine("0 Salir");
     System.Console.WriteLine();
