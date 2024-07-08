@@ -7,3 +7,11 @@ pilaEnteros.Push(2);
 pilaEnteros.Push(100);
 
 
+
+static void ImprimirPila(Stack<int> pila){
+    foreach (var item in pila)
+    {
+        System.Console.WriteLine(item);
+    }
+    System.Console.WriteLine(new string('-', 20));
+}
