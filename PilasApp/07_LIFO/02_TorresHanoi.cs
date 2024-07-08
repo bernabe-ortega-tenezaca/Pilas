@@ -13,6 +13,7 @@ public static class Hanoi{
             torreA.Push(i);
         }
         DibujarTorres();
+        Resolver(NumDiscos, torreA, torreC, torreB);
     }
 
     static void Resolver(int n, Stack<int> origen, Stack<int> destino, Stack<int> auxiliar){
