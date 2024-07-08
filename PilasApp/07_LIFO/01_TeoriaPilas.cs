@@ -19,6 +19,11 @@ public static class Pila{
         System.Console.WriteLine("Se ha sacado el elemento {0}", ElementoSacado);
         ImprimirPila(pilaEnteros);
 
+        // Vaciar la pila
+        while (pilaEnteros.Count > 0)
+        {
+            System.Console.WriteLine("Se saca el elemento {0}", pilaEnteros.Pop());
+        }
     }
 
     /**
