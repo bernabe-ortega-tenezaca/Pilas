@@ -15,10 +15,6 @@ switch (opcion)
 }
 
 
-
-
-
-
 /**
 * Muestra el menú
 */
@@ -26,7 +22,6 @@ static void menu(){
     caratula();
     System.Console.WriteLine("1 Teoría de pilas");
     System.Console.WriteLine("0 Salir");
-
 }
 
 /**
