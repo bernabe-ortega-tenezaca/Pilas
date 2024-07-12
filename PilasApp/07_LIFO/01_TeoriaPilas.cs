@@ -11,19 +11,22 @@ public static class Pila{
 
         ImprimirPila(pilaEnteros);
 
-        // Mostrar el elemento en la parte superior sin sacarlo de la pila
+        // Mostrar el elemento en la parte superior sin sacarlo de la pila con Peek()
         int ElementoSuperior = pilaEnteros.Peek(); 
         System.Console.WriteLine("Elemento en la cima (Peek): {0}", ElementoSuperior);
 
-        int ElementoSacado = pilaEnteros.Pop();
+        // Sacar el elemento que se encuentra arriba de la pila mediante Pop()
+        int ElementoSacado = pilaEnteros.Pop(); 
         System.Console.WriteLine("Se ha sacado el elemento {0} con el método Pop()", ElementoSacado);
         ImprimirPila(pilaEnteros);
 
-        // Vaciar la pila
+        // Vaciar la pila si tiene elementos Count
         while (pilaEnteros.Count > 0)
-        {
+        {   
+            // Imprime en pantalla a la vez que se elimina de la pila el valor que se encuentra en la parte superior
             System.Console.WriteLine("Se saca el elemento {0}", pilaEnteros.Pop());
         }
+        // Llamado a la función ImprimirPila y le damos una pila como parámetro, en este ejemplo: pilaEnteros
         ImprimirPila(pilaEnteros);
     }
 
