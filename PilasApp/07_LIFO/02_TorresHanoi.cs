@@ -6,11 +6,12 @@ public static class Hanoi{
 
     
     public static void Run(){
-        InicializarPila();
+        InicializarPila(); // Elimina datos o residuos en las torres
         System.Console.Write("Cuántos discos contiene la torre");
         int NumDiscos = int.Parse(Console.ReadLine());
 
-        for (int i = NumDiscos; i >=1 ; i--){
+        //For en reversa que almacena los números desde el mayor al menor
+        for (int i = NumDiscos; i >=1 ; i--){ 
             torreA.Push(i);
         }
         DibujarTorres();
@@ -25,6 +26,7 @@ public static class Hanoi{
             DibujarTorres();
         }
         else{
+            // Utilizamos recursividad.
             Resolver(n-1, origen, auxiliar, destino);
             MoverDisco(origen, destino);
             
@@ -33,7 +35,9 @@ public static class Hanoi{
         }
     }
 
+    // Mueve un disco desde el origen hacia el destino (de una torre a otra)
     static void MoverDisco(Stack<int> origen, Stack<int> destino){
+        // En destino se coloca un nuevo elemento que es el que se elimina en el origen
         destino.Push(origen.Pop());
     }
 
@@ -46,6 +50,7 @@ public static class Hanoi{
     }
 
     static void InicializarPila(){
+        // Utilizamos el método Clear para borrar el contenido de las pilas 
         torreA.Clear();
         torreB.Clear();
         torreC.Clear();
