@@ -67,4 +67,6 @@ static void encabezado(string opcion){
 
 static void pie(){
     System.Console.WriteLine(new string('=', 20)); 
+    System.Console.WriteLine("                          Pulse la tecla enter para continuar ...");
+    Console.ReadLine();
 }
