@@ -1,12 +1,12 @@
-public static class balanceo{
+public static class Balanceo{
 
-    static void Run(){
-        // (4+(3*(2+5)))
+    public static void Run(){
+        // (4+3*)2+5)))
 
         // Definimos una pila para almacenar letras
         Stack<char> ecuacion = new Stack<char>();
 
-        string formula = "(4+(3*(2+5)))";
+        string formula = "(4+3*((2+5)))";
 
         foreach (char letra in formula)
         {
@@ -17,14 +17,19 @@ public static class balanceo{
         int ParentesisAbiertos = 0;
         int ParentesisCerrados = 0;
 
-        foreach (var item in ecuacion)
-        {
-            if(item == '('){
+        while(ecuacion.Count > 0){
+            char signo = ecuacion.Pop();
+            if(signo == '('){
                 ParentesisAbiertos ++;
+                // System.Console.WriteLine("abierto {0}", signo);
             }
 
-            if(item == ')') ParentesisCerrados++;
+            if(signo == ')'){
+                ParentesisCerrados++;
+                // System.Console.WriteLine("cerrado {0}", signo);
 
+            } 
+            // System.Console.WriteLine("tiene {0} elementos", ecuacion.Count);
         }
 
         if(ParentesisAbiertos == ParentesisCerrados){
