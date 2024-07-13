@@ -36,7 +36,7 @@ public static class Pila{
     */
     static void ImprimirPila(Stack<int> pila){
         System.Console.WriteLine();
-        System.Console.WriteLine("El número actual de elementos es: {0}", pila.Count);
+        System.Console.WriteLine("El número actual de elementos es: {0}", pila.Count);//Cont devuelve el número de elementos en la pila
         System.Console.WriteLine("---------------------------------------------");
         foreach (var item in pila) // Recorrer elementos de la pila
             {
