@@ -14,6 +14,26 @@ public static class balanceo{
         }
         imprimirPila(ecuacion);
 
+        int ParentesisAbiertos = 0;
+        int ParentesisCerrados = 0;
+
+        foreach (var item in ecuacion)
+        {
+            if(item == '('){
+                ParentesisAbiertos ++;
+            }
+
+            if(item == ')') ParentesisCerrados++;
+
+        }
+
+        if(ParentesisAbiertos == ParentesisCerrados){
+            System.Console.WriteLine("Ecuación Balanceada");
+        }else{
+            System.Console.WriteLine("Ecuación NO balanceada");
+        }
+
+
     }
 
 
