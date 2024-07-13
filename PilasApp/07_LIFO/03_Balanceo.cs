@@ -39,7 +39,7 @@ public static class Balanceo{
         //     System.Console.WriteLine("Ecuación NO balanceada");
         // }
 
-        // if de una sola linea
+        // if de una sola linea (operador ternario)
         string resultado = ParentesisAbiertos == ParentesisCerrados? "Balanceada": "NO balanceada";
         System.Console.WriteLine("Ecuación " + resultado);
     }
