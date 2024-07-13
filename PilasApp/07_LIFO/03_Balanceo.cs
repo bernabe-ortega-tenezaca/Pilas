@@ -6,7 +6,9 @@ public static class Balanceo{
         // Definimos una pila para almacenar letras
         Stack<char> ecuacion = new Stack<char>();
 
-        string formula = "(4+3*((2+5)))";
+        //string formula = "(4+3*((2+5)))"; 
+        System.Console.WriteLine("ingrese una ecuación");
+        string formula = Console.ReadLine();
 
         foreach (char letra in formula)
         {
@@ -23,22 +25,18 @@ public static class Balanceo{
                 ParentesisAbiertos ++;
                 // System.Console.WriteLine("abierto {0}", signo);
             }
-
-            if(signo == ')'){
-                ParentesisCerrados++;
-                // System.Console.WriteLine("cerrado {0}", signo);
-
-            } 
-            // System.Console.WriteLine("tiene {0} elementos", ecuacion.Count);
+            if(signo == ')') ParentesisCerrados++;
         }
+        
+        // if(ParentesisAbiertos == ParentesisCerrados){
+        //     System.Console.WriteLine("Ecuación Balanceada");
+        // }else{
+        //     System.Console.WriteLine("Ecuación NO balanceada");
+        // }
 
-        if(ParentesisAbiertos == ParentesisCerrados){
-            System.Console.WriteLine("Ecuación Balanceada");
-        }else{
-            System.Console.WriteLine("Ecuación NO balanceada");
-        }
-
-
+        // if de una sola linea
+        string resultado = ParentesisAbiertos == ParentesisCerrados? "Balanceada": "No balanceada";
+        System.Console.WriteLine("Ecuación " + resultado);
     }
 
 

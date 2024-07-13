@@ -10,17 +10,17 @@ while (true)
             return;
         case "1":
             encabezado("Teoría de pilas");
-            Balanceo.Run();
-            pie();
-            break;
-        case "2":
-            encabezado("Teoría de pilas");
             Pila.Run();
             pie();
             break;
-        case "3":
+        case "2":
             encabezado("Pilas - Torre de Hanoi");
             Hanoi.Run();
+            pie();
+            break;
+        case "3":
+            encabezado("Pilas - Balanceo de ecuaciones básicas");
+            Balanceo.Run();
             pie();
             break;
         default:
@@ -35,9 +35,9 @@ while (true)
 */
 static void menu(){
     caratula();
-    System.Console.WriteLine("1 Balanceo");
-    System.Console.WriteLine("2 Teoría de pilas");
-    System.Console.WriteLine("3     Pilas - Torre de Hanoi");
+    System.Console.WriteLine("1 Teoría de pilas");
+    System.Console.WriteLine("2     Pilas - Torre de Hanoi");
+    System.Console.WriteLine("3     Pilas - Balanceo de ecuaciones básica");
     System.Console.WriteLine(new string('-', 55));
     System.Console.WriteLine("0 Salir");
     System.Console.WriteLine();
