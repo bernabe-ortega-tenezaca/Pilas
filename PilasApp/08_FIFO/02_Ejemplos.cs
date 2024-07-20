@@ -7,7 +7,7 @@ public static class EjemplosCola{
 
         // Enqueue sirve para encolar, agregar elementos a la cola
         usuarios.Enqueue("Ana"); // Ana es el elemento que entra primero
-        usuarios.Enqueue("Juan");
+        usuarios.Enqueue(Console.ReadLine()); // Llenado de pasajeros por consola
         usuarios.Enqueue("Carla");
         usuarios.Enqueue("Enrique");
         imprimirCola(usuarios);
@@ -27,15 +27,18 @@ public static class EjemplosCola{
         //Thread.Sleep(3000);
         //imprimirCola(usuarios);
 
+        int asiento=1;
         // simular atención al cliente
         while (usuarios.Count > 0)
         {
-            System.Console.WriteLine("El usuario {0} ha sido atendido.", usuarios.Dequeue());
-            Thread.Sleep(rnd.Next(2000)); //
+
+            //System.Console.WriteLine("El usuario {0} ha sido atendido.", usuarios.Dequeue());
+            Console.WriteLine("Al usuario " + usuarios.Dequeue()+ " Se le asigna el asiento: " + asiento.ToString());
+            Thread.Sleep(rnd.Next(2000)); //Linea sirve para simular la atención
+            asiento++;
         }
 
         //TODO: Cola prioritaria 
-        //TODO: Pasajes
     }
 
     private static void imprimirCola(Queue<string> cola){   
