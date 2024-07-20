@@ -7,7 +7,7 @@ public static class EjemplosCola{
 
         // Enqueue sirve para encolar, agregar elementos a la cola
         usuarios.Enqueue("Ana"); // Ana es el elemento que entra primero
-        usuarios.Enqueue(Console.ReadLine()); // Llenado de pasajeros por consola
+        //usuarios.Enqueue(Console.ReadLine()); // Llenado de pasajeros por consola
         usuarios.Enqueue("Carla");
         usuarios.Enqueue("Enrique");
         imprimirCola(usuarios);
