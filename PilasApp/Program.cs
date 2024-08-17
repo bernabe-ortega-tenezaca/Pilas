@@ -34,8 +34,13 @@ while (true)
             pie();
             break;
         case "6":
-            encabezado("Conjuntos HashSet - Ejemplo");
+            encabezado("Conjuntos HashSet - Teoría");
             Conjuntos.Run();
+            pie();
+            break;
+        case "7":
+            encabezado("Conjuntos HashSet - Ejemplo");
+            EjConjuntos.Run();
             pie();
             break;
         default:
@@ -56,6 +61,7 @@ static void menu(){
     System.Console.WriteLine("4 Teoría de colas");
     System.Console.WriteLine("5     Ejemplos de colas");
     System.Console.WriteLine("6 Teoría de conjuntos");
+    System.Console.WriteLine("7     Ejemplos de conjuntos");
     System.Console.WriteLine(new string('-', 55));
     System.Console.WriteLine("0 Salir");
     System.Console.WriteLine();
