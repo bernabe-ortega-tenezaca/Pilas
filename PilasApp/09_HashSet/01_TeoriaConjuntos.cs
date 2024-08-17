@@ -30,7 +30,14 @@ public static class Conjuntos{
         {
             Console.WriteLine(item);
         }
+    }
 
+    public static void Imprimir(HashSet<int> datos){
+        System.Console.WriteLine("El contenido del conjunto es: ");
+        foreach (var item in datos)
+        {
+            System.Console.WriteLine(item);
+        }
     }
 
 }
