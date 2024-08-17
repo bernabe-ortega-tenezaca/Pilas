@@ -35,7 +35,7 @@ while (true)
             break;
         case "6":
             encabezado("Conjuntos HashSet - Ejemplo");
-            //EjemplosCola.Run();
+            Conjuntos.Run();
             pie();
             break;
         default:
