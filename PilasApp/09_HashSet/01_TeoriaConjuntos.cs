@@ -45,4 +45,17 @@ public static class Conjuntos{
         }
     }
 
+    /// <summary>
+    /// Funcion para imprimir un conjunto de datos
+    /// </summary>
+    /// <typeparam name="T">Tipo de dato</typeparam>
+    /// <param name="conjunto">Colección de datos</param>
+    static void Imprimir<T>(HashSet<T> conjunto)
+    {
+        Console.WriteLine("Elementos en el HashSet:");
+        foreach (var elemento in conjunto)
+        {
+            Console.WriteLine(elemento);
+        }
+    }
 }
