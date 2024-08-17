@@ -25,18 +25,23 @@ public static class Conjuntos{
         }
 
         //Imprimir el conjunto
-        System.Console.WriteLine("El contenido del conjunto es:");
-        foreach (var item in numeros) // recorrer la colección numeros
-        {
-            Console.WriteLine(item);
-        }
+        // System.Console.WriteLine("El contenido del conjunto es:");
+        // foreach (var item in numeros) // recorrer la colección numeros
+        // {
+        //     Console.WriteLine(item);
+        // }
+        Imprimir(numeros);
     }
 
+    /// <summary>
+    /// Funcion para imprimir los elementos de un conjunto
+    /// </summary>
+    /// <param name="datos">conjunto de datos que se quiere imprimir</param>
     public static void Imprimir(HashSet<int> datos){
         System.Console.WriteLine("El contenido del conjunto es: ");
-        foreach (var item in datos)
+        foreach (var item in datos) // recorrer la colección numeros
         {
-            System.Console.WriteLine(item);
+            System.Console.WriteLine(item); 
         }
     }
 
