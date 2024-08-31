@@ -43,6 +43,11 @@ while (true)
             EjConjuntos.Run();
             pie();
             break;
+        case "8":
+            encabezado("Diccionarios");
+            Diccionario.Run();
+            pie();
+            break;
         default:
             System.Console.WriteLine("Opción no válida, presione una tecla para continuar");
             break;
@@ -62,6 +67,7 @@ static void menu(){
     System.Console.WriteLine("5     Ejemplos de colas");
     System.Console.WriteLine("6 Teoría de conjuntos");
     System.Console.WriteLine("7     Ejemplos de conjuntos");
+    System.Console.WriteLine("8 Diccionario");
     System.Console.WriteLine(new string('-', 55));
     System.Console.WriteLine("0 Salir");
     System.Console.WriteLine();
