@@ -38,16 +38,26 @@ public static class Diccionario{
         string? texto = Console.ReadLine();
 
         string[] palabras = texto.Split(" "); //convertimos el texto en un vector
+        string textoTraducido = string.Empty;
+        string textoBuscado = string.Empty;
 
-        //imprimir contenido del diccionario
-        foreach (var item in idioma)
-        {
-            System.Console.WriteLine(item);
-        }
+        // //imprimir contenido del diccionario
+        // foreach (var item in idioma)
+        // {
+        //     System.Console.WriteLine(item);
+        // }
 
         foreach (var item in palabras)
         {
-            System.Console.WriteLine(item);
+            textoBuscado = item;
+
+            if(idioma.ContainsKey(item)){
+                // System.Console.WriteLine("palabra encontrada en el diccionario " + item);
+                textoBuscado = idioma[item];
+            }
+            textoTraducido = textoTraducido + " " + textoBuscado;
         }
+        
+        System.Console.WriteLine(textoTraducido);
     }
 }
