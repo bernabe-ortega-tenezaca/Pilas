@@ -50,7 +50,7 @@ while (true)
             break;
         case "9":
             encabezado("Arboles");
-            //Diccionario.Run();
+            Arbol.Run();
             pie();
             break;
         default:
