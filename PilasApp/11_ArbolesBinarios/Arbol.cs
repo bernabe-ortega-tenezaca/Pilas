@@ -22,6 +22,8 @@ public static class Arbol{
     public class ArbolBinario{
         public Node? Raiz;
 
+        private string code_graph = "";
+
         public void insertar(int nuevoValor){
             // Si la raiz es nula, inserto el nuevo valor
             if (Raiz == null)
@@ -86,6 +88,114 @@ public static class Arbol{
             System.Console.WriteLine();
         }
 
+        /// <summary>
+        /// El método de graficar esta basado en la solución de César Sazo
+        /// https://www.youtube.com/watch?v=chrIJgjr4MI
+        /// Arbol Binario de Busqueda en C#
+        /// </summary>
+        public void graficar()
+        {
+            // lineas para windows
+            // TextWriter text;
+            // text = new StreamWriter("C:\\Fuentes\\abbT.txt");
+
+            // lineas para MacOS
+            string path = "/Users/aqui_el_usuario/Downloads";  // cambie por el usuario correspondiente de su macbook
+            string fileName = "abbT.txt";
+            TextWriter text;
+
+            // Asegúrate de que la carpeta exista
+            if (!Directory.Exists(path))
+            {
+                Directory.CreateDirectory(path);
+            }
+
+            text = new StreamWriter(Path.Combine(path, fileName));
+
+
+            string escribir;
+            escribir = obtenernodos();
+            text.WriteLine(escribir);
+            text.Close();
+
+            //Generar imagen en windows            
+            //Generate_Graph("abbT.txt", "C:/Fuentes");
+
+            // Generar imagen en macOS
+            Generate_Graph(fileName, path);
+        }
+
+        private string obtenernodos()
+        {
+            code_graph += "digraph{";
+            code_graph += "\n";
+            code_graph += "\n";
+
+            code_graph += "subgraph cluster_1{ ";
+            code_graph += "\n";
+            code_graph += "label = \"ARBOL BINARIO DE BUSQUEDA:\"; ";
+            code_graph += "\n";
+
+            agregarmasnodos(Raiz);//METODO QUE AGREGA EL CUERPO DEL ARCHIVO .txt QUE SE VA A GENERAR
+
+            code_graph += "\n";
+            code_graph += "}";
+            code_graph += "\n";
+            code_graph += "\n";
+            code_graph += "}";
+
+            return code_graph;
+        }
+
+        private void agregarmasnodos(Node raiz)
+        {
+            if (raiz != null)
+            {
+                code_graph += "\n";
+                if (raiz.left != null)
+                {
+                    agregarmasnodos(raiz.left);
+                    code_graph += (raiz.Value.ToString() + "->" + raiz.left.Value.ToString());
+                    code_graph += "\n";
+                }
+                if (raiz.right != null)
+                {
+                    agregarmasnodos(raiz.right);
+                    code_graph += (raiz.Value.ToString() + "->" + raiz.right.Value.ToString());
+                    code_graph += "\n";
+                }
+            }
+        }
+
+        private static void Generate_Graph(string fileName, string path)
+        {
+            try
+            {
+                var command = string.Format("dot -Tjpg {0} -o {1}", Path.Combine(path, fileName), Path.Combine(path, fileName.Replace(".txt", ".jpg")));
+                
+                // lineas para windows
+                // var procStartInfo = new System.Diagnostics.ProcessStartInfo("cmd.exe", "/C " + command);
+                // var proc = new System.Diagnostics.Process();
+
+                //lineas para macOS
+                var procStartInfo = new System.Diagnostics.ProcessStartInfo("/bin/bash", "-c \"" + command + "\"");
+                procStartInfo.RedirectStandardOutput = true;
+                procStartInfo.UseShellExecute = false;
+                procStartInfo.CreateNoWindow = true;
+
+                var proc = new System.Diagnostics.Process();
+
+
+                proc.StartInfo = procStartInfo;
+                proc.Start();
+                proc.WaitForExit();
+            }
+            catch (Exception x)
+            {
+                Console.WriteLine(x.ToString());
+            }
+        }
+
     }
 
     private static int MinValue(Node root) {   
@@ -109,8 +219,11 @@ public static class Arbol{
             miArbol.insertar(item);
         }
 
+        miArbol.insertar(32);
+
         miArbol.imprimirInOrder(miArbol.Raiz);
 
+        miArbol.graficar();
         
     }
 }
