@@ -51,7 +51,7 @@ public static class Arbol{
             }
         }
 
-        public Node? eliminar(Node raiz, int key){
+        public static Node? eliminar(Node raiz, int key){
             if (raiz == null) return raiz;
             
             if (key < raiz.Value) {
@@ -68,6 +68,12 @@ public static class Arbol{
                             raiz.right = eliminar(raiz.right, raiz.Value);
                         }
             return raiz;
+        }
+
+        public static Node? Search(Node root, int key) {
+            if (root == null || root.Value == key) return root;
+            if (key < root.Value) return Search(root.left, key);
+                return Search(root.right, key);
         }
 
     }
