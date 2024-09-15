@@ -76,6 +76,8 @@ public static class Arbol{
                 return Search(root.right, key);
         }
 
+        
+
     }
 
     private static int MinValue(Node root) {   
@@ -87,6 +89,18 @@ public static class Arbol{
         return minValue;
     }
     public static void Run(){
+        // Creamos un árbol binario llamado miArbol
+        ArbolBinario miArbol = new ArbolBinario();
+
+        // creamos un vector con todos los valores que insertaremos en el arbol
+        int[] valores = {18,9,25,7,12,23,29,2,8,11,21,24,31}; 
+        
+        // insertamos los valores en el árbol
+        foreach (var item in valores)
+        {
+            miArbol.insertar(item);
+        }
+
         
     }
 }
