@@ -1,20 +1,18 @@
-using System.Security.Cryptography.X509Certificates;
-
 public static class Arbol{
 
     /// <summary>
     /// Definición de un nodo
     /// </summary>
     public class Node{
-        public int Value;
-        public Node? left;
-        public Node? right;
+        public int Value; // Se almacenaran valores enteros
+        public Node? left; // El nodo izquierdo puede ser nulo
+        public Node? right; // El nodo derecho puede ser nulo
 
         /// <summary>
         /// Constructor de un nodo
         /// </summary>
         /// <param name="valor">Requiere un valor entero</param>
-        public Node(int valor){
+        public Node(int valor){ 
             Value = valor;
             left = null;
             right = null;
@@ -53,6 +51,34 @@ public static class Arbol{
             }
         }
 
+        public Node? eliminar(Node raiz, int key){
+            if (raiz == null) return raiz;
+            
+            if (key < raiz.Value) {
+                raiz.left = eliminar(raiz.left, key);
+            } else 
+                if (key > raiz.Value) {
+                    raiz.right = eliminar(raiz.right, key);
+                } else {
+                    if (raiz.left == null) 
+                        return raiz.right;
+                    else 
+                        if (raiz.right == null) return raiz.left;
+                            raiz.Value = MinValue(raiz.right);
+                            raiz.right = eliminar(raiz.right, raiz.Value);
+                        }
+            return raiz;
+        }
+
+    }
+
+    private static int MinValue(Node root) {   
+        int minValue = root.Value;
+        while (root.left != null) {
+            minValue = root.left.Value;
+            root = root.left;
+        }
+        return minValue;
     }
     public static void Run(){
         
