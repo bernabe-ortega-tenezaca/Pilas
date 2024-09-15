@@ -51,7 +51,7 @@ public static class Arbol{
             }
         }
 
-        public static Node? eliminar(Node raiz, int key){
+        public Node? eliminar(Node raiz, int key){
             if (raiz == null) return raiz;
             
             if (key < raiz.Value) {
@@ -70,13 +70,21 @@ public static class Arbol{
             return raiz;
         }
 
-        public static Node? Search(Node root, int key) {
+        public Node? Search(Node root, int key) {
             if (root == null || root.Value == key) return root;
             if (key < root.Value) return Search(root.left, key);
                 return Search(root.right, key);
         }
 
-        
+        public void imprimirInOrder(Node raiz){
+            if (raiz != null)
+            {
+                imprimirInOrder(raiz.left);
+                Console.Write(raiz.Value + " ");
+                imprimirInOrder(raiz.right);
+            }
+            System.Console.WriteLine();
+        }
 
     }
 
@@ -100,6 +108,8 @@ public static class Arbol{
         {
             miArbol.insertar(item);
         }
+
+        miArbol.imprimirInOrder(miArbol.Raiz);
 
         
     }
