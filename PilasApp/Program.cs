@@ -53,6 +53,11 @@ while (true)
             Arbol.Run();
             pie();
             break;
+        case "10":
+            encabezado("Arboles BST");
+            ArbolBinarioBusqueda.Run();
+            pie();
+            break;
         default:
             System.Console.WriteLine("Opción no válida, presione una tecla para continuar");
             break;
@@ -74,6 +79,7 @@ static void menu(){
     System.Console.WriteLine("7     Ejemplos de conjuntos");
     System.Console.WriteLine("8 Diccionario");
     System.Console.WriteLine("9 Árboles");
+    System.Console.WriteLine("10 Árbol Binario de búsqueda");
     System.Console.WriteLine(new string('-', 55));
     System.Console.WriteLine("0 Salir");
     System.Console.WriteLine();
